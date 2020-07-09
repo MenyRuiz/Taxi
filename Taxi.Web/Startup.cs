@@ -40,6 +40,9 @@ namespace Taxi.Web
             });
             //...hasta aqui
 
+
+
+            services.AddTransient<SeedDb>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
