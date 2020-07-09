@@ -16,5 +16,7 @@ namespace Taxi.Web.Data.Entities
         
         [Required(ErrorMessage = "The field {0} is mandatory.")]
         public string plaque { get; set; }
+
+        public ICollection<TripEntity> Trips { get; set; }
     }
 }
