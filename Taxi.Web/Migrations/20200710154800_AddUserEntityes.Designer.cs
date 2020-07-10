@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Taxi.Web.Data;
 
 namespace Taxi.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20200710154800_AddUserEntityes")]
+    partial class AddUserEntityes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -131,7 +133,7 @@ namespace Taxi.Web.Migrations
 
             modelBuilder.Entity("Taxi.Web.Data.Entities.TaxiEntity", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -141,7 +143,7 @@ namespace Taxi.Web.Migrations
                         .IsRequired()
                         .HasMaxLength(6);
 
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.HasIndex("UserId");
 
@@ -200,15 +202,15 @@ namespace Taxi.Web.Migrations
 
                     b.Property<double>("TargetLongitude");
 
-                    b.Property<int?>("TaxiId");
+                    b.Property<int?>("Taxiid");
 
-                    b.Property<string>("UserId");
+                    b.Property<string>("UserEntityId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TaxiId");
+                    b.HasIndex("Taxiid");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserEntityId");
 
                     b.ToTable("Trips");
                 });
@@ -365,11 +367,11 @@ namespace Taxi.Web.Migrations
                 {
                     b.HasOne("Taxi.Web.Data.Entities.TaxiEntity", "Taxi")
                         .WithMany("Trips")
-                        .HasForeignKey("TaxiId");
+                        .HasForeignKey("Taxiid");
 
-                    b.HasOne("Taxi.Web.Data.Entities.UserEntity", "User")
+                    b.HasOne("Taxi.Web.Data.Entities.UserEntity")
                         .WithMany("Trips")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserEntityId");
                 });
 
             modelBuilder.Entity("Taxi.Web.Data.Entities.UserEntity", b =>

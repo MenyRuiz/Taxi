@@ -32,7 +32,7 @@ namespace Taxi.Web.Controllers
             }
 
             var taxiEntity = await _context.Taxis
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (taxiEntity == null)
             {
                 return NotFound();
@@ -98,7 +98,7 @@ namespace Taxi.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, TaxiEntity taxiEntity)
         {
-            if (id != taxiEntity.id)
+            if (id != taxiEntity.Id)
             {
                 return NotFound();
             }

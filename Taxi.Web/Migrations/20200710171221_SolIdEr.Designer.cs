@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Taxi.Web.Data;
 
 namespace Taxi.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20200710171221_SolIdEr")]
+    partial class SolIdEr
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -202,13 +204,13 @@ namespace Taxi.Web.Migrations
 
                     b.Property<int?>("TaxiId");
 
-                    b.Property<string>("UserId");
+                    b.Property<string>("UserEntityId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("TaxiId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserEntityId");
 
                     b.ToTable("Trips");
                 });
@@ -367,9 +369,9 @@ namespace Taxi.Web.Migrations
                         .WithMany("Trips")
                         .HasForeignKey("TaxiId");
 
-                    b.HasOne("Taxi.Web.Data.Entities.UserEntity", "User")
+                    b.HasOne("Taxi.Web.Data.Entities.UserEntity")
                         .WithMany("Trips")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserEntityId");
                 });
 
             modelBuilder.Entity("Taxi.Web.Data.Entities.UserEntity", b =>
