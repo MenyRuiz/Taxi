@@ -8,11 +8,11 @@ using Taxi.Web.Models;
 
 namespace Taxi.Web.Controllers
 {
-    public class AccountContoller : Controller
+    public class Account : Controller
     {
         private readonly IUserHelper _userHelper;
 
-        public AccountContoller(IUserHelper userHelper)
+        public Account(IUserHelper userHelper)
         {
             _userHelper = userHelper;
         }
@@ -20,7 +20,7 @@ namespace Taxi.Web.Controllers
         public IActionResult Login()
         {
             if (User.Identity.IsAuthenticated)
-            { 
+            {
                 return RedirectToAction("Index", "Home");
             }
 
