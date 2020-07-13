@@ -46,17 +46,16 @@ namespace Taxi.Web
                 cfg.Password.RequireUppercase = false;
             }).AddEntityFrameworkStores<DataContext>();
 
-            //lineas de conexion a la base de datos
             services.AddDbContext<DataContext>(cfg =>
             {
                 cfg.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
-            //...hasta aqui
-
 
 
             services.AddTransient<SeedDb>();
+
             services.AddScoped<IUserHelper, UserHelper>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
