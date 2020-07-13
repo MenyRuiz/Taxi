@@ -17,8 +17,6 @@ namespace Taxi.Web.Controllers
             _userHelper = userHelper;
         }
 
-
-
         public IActionResult Login()
         {
             if (User.Identity.IsAuthenticated)
