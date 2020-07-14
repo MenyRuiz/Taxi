@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using Taxi.Common.Models;
+using Prism.Commands;
 using Prism.Navigation;
 
 namespace Taxi.Prism.ViewModels
@@ -17,7 +18,7 @@ namespace Taxi.Prism.ViewModels
 
         private async void SelectMenuAsync()
         {
-            await _navigationService.NavigateAsync($"/TaxiMasterDetailPage/NavigationPage/HomePage");
+            await _navigationService.NavigateAsync($"/TaxiMasterDetailPage/NavigationPage/{PageName}");
         }
     }
 }
