@@ -5,7 +5,6 @@
              x:Class="Taxi.Prism.App">
   <Application.Resources>
 
-    <!-- Application resource dictionary -->
-
+      
   </Application.Resources>
 </prism:PrismApplication>

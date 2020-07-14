@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Taxi.Common.Models
 {
-    class Menu
+    class Men
     {
         public string Icon { get; set; }
         public string Title { get; set; }
