@@ -10,7 +10,8 @@ namespace Taxi.Prism.ViewModels
     {
         private readonly INavigationService _navigationService;
 
-        public TaxiMasterDetailPageViewModel(INavigationService navigationService) : base(navigationService)
+        public TaxiMasterDetailPageViewModel(INavigationService navigationService) 
+            : base(navigationService)
         {
             _navigationService = navigationService;
             LoadMenus();

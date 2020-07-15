@@ -12,7 +12,7 @@ namespace Taxi.Prism.ViewModels
         public ReportPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Title = "Report a accidente";
+            Title = "Report an incident";
         }
     }
 }
