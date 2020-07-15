@@ -45,7 +45,7 @@ namespace Taxi.Prism.Views
             }
         }
 
-        
+        [System.Obsolete]
         private async Task<bool> CheckLocationPermisionsAsync()
         {
             PermissionStatus permissionLocation = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
