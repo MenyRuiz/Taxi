@@ -92,7 +92,7 @@ namespace Taxi.Web.Data
                             Qualification = 4.5f,
                             Source = "ITM Fraternidad",
                             Target = "ITM Robledo",
-                            Remarks = "Muy buen servicio",
+                            Remarks = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate sem dignissim, faucibus mi ut, accumsan dui. Mauris tristique imperdiet lacus a fermentum. Praesent ut commodo lorem. Nam eget gravida tellus. Sed laoreet, nisl non varius sollicitudin, arcu tellus varius sapien, nec ullamcorper velit eros iaculis dui. Donec aliquam, urna a porta elementum, velit odio ornare quam, sed feugiat tellus dolor eu eros. Aenean ornare finibus iaculis. Quisque aliquam odio vel vehicula condimentum. Nam eros nibh, mollis facilisis sagittis et, aliquet non leo. Suspendisse quis maximus tortor. In varius, sem eu euismod tristique, ligula felis lobortis ex, vel condimentum massa tellus sit amet tortor.",
                             User = user1
                         },
                         new TripEntity
@@ -102,7 +102,7 @@ namespace Taxi.Web.Data
                             Qualification = 4.8f,
                             Source = "ITM Robledo",
                             Target = "ITM Fraternidad",
-                            Remarks = "Conductor muy amable",
+                            Remarks = "Vestibulum tincidunt nibh est, sed rutrum neque pretium ac. In hac habitasse platea dictumst. Phasellus eu suscipit massa. Proin id urna lorem. Cras ac mattis metus. Curabitur auctor, ex ut pellentesque porttitor, arcu dui ultrices massa, nec sagittis arcu quam sit amet nulla. Aenean eget egestas velit. Nam velit nisi, blandit quis est sed, laoreet varius nunc. Maecenas pellentesque gravida enim vitae convallis. Donec tempor bibendum justo, at ultricies neque feugiat quis. Suspendisse id pharetra ex. Vivamus auctor risus molestie ipsum luctus, eget dictum purus placerat. Suspendisse faucibus fringilla felis, vel elementum orci sagittis in. Nulla porta libero et aliquet scelerisque. Proin mattis aliquet nisi eu porta.",
                             User = user1
                         }
                     }
