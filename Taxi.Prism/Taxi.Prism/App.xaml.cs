@@ -7,6 +7,7 @@ using Xamarin.Forms.Xaml;
 using Taxi.Prism.Views;
 using Taxi.Prism.ViewModels;
 using Taxi.Common.Services;
+using Syncfusion.Licensing;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Taxi.Prism
@@ -24,6 +25,7 @@ namespace Taxi.Prism
 
         protected override async void OnInitialized()
         {
+            SyncfusionLicenseProvider.RegisterLicense("Mjg4MzI5QDMxMzgyZTMyMmUzMFlnczE1QWJsNEtjRm9hR2dXNEllbkdEWmo5ejZqaDcyZ2ErUmhqWGNYK0U9");
             InitializeComponent();
 
             await NavigationService.NavigateAsync("/TaxiMasterDetailPage/NavigationPage/HomePage");
