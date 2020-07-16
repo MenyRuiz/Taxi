@@ -1,5 +1,6 @@
 ﻿using Prism.Commands;
 using Prism.Navigation;
+using System;
 using System.Text.RegularExpressions;
 using Taxi.Common.Models;
 using Taxi.Common.Services;
@@ -11,6 +12,7 @@ namespace Taxi.Prism.ViewModels
         private readonly IApiService _apiService;
         private TaxiResponse _taxi;
         private bool _isRunning;
+        private bool _visiblestars;
         private DelegateCommand _checkPlaqueCommand;
 
         public TaxiHistoryPageViewModel(
@@ -25,6 +27,11 @@ namespace Taxi.Prism.ViewModels
         {
             get => _isRunning;
             set => SetProperty(ref _isRunning, value);
+        }
+        public bool visibleStars
+        {
+            get => _visiblestars;
+            set => SetProperty(ref _visiblestars, value);
         }
 
         public TaxiResponse Taxi
@@ -59,10 +66,18 @@ namespace Taxi.Prism.ViewModels
             }
 
             IsRunning = true;
-            string url = App.Current.Resources["UrlAPI"].ToString();
+            visibleStars = false;
+            var url = App.Current.Resources["UrlAPI"].ToString();
+            var connection = await _apiService.CheckConnectionAsync(url);
+            if (!connection)
+            {
+                IsRunning = false;
+                await App.Current.MainPage.DisplayAlert("Error", "Check the internet connection.", "Accept");
+                return;
+            }
             Response response = await _apiService.GetTaxiAsync(plaque, url, "api", "/Taxis");
             IsRunning = false;
-
+            visibleStars = true;
             if (!response.IsSuccess)
             {
                 await App.Current.MainPage.DisplayAlert(
